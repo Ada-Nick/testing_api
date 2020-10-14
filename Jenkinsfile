@@ -18,4 +18,7 @@ pipeline {
             }
         }
     }
+    post{
+      echo 'Post action required'
+    }
 }
