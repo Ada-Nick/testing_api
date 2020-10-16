@@ -1,16 +1,17 @@
 import unittest
 import app
 
+
 class TestHello(unittest.TestCase):
 
     def setUp(self):
         app.app.testing = True
         self.app = app.app.test_client()
 
-    def test_hello(self):
+    def test_base(self):
         rv = self.app.get('/')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'Hello World!\n')
+        assert rv.data == 0 
 
     def test_hello_hello(self):
         rv = self.app.get('/hello/')
