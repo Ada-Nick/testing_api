@@ -12,8 +12,8 @@ class TestHello(unittest.TestCase):
         rv = self.app.get('/')
         print(type(rv))
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(type(rv.data), int)
-
+        
+        self.assertIsNotNone(rv.data)
     def test_hello_hello(self):
         rv = self.app.get('/hello/')
         self.assertEqual(rv.status, '200 OK')
