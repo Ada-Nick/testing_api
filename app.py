@@ -2,7 +2,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def bas():
+def base():
     return 0
 @app.route('/hello/')
 def hello_world():

@@ -10,9 +10,9 @@ class TestHello(unittest.TestCase):
 
     def test_base(self):
         rv = self.app.get('/')
-        print(rv)
+        print(type(rv))
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv., '0')
+        self.assertEqual(type(rv.data), int)
 
     def test_hello_hello(self):
         rv = self.app.get('/hello/')
