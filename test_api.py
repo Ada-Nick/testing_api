@@ -1,19 +1,20 @@
+
 import unittest
 import app
 
 
 class TestHello(unittest.TestCase):
 
+
+    def test_database_conection(self): 
+
+        assert type(app.create_database_connection()) != None
+
     def setUp(self):
         app.app.testing = True
         self.app = app.app.test_client()
-
-    def test_base(self):
-        rv = self.app.get('/')
-        print(type(rv))
-        self.assertEqual(rv.status, '200 OK')
-        
-        self.assertIsNotNone(rv.data)
+   
+    
     def test_hello_hello(self):
         rv = self.app.get('/hello/')
         self.assertEqual(rv.status, '200 OK')

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Reconstruction Error</h1>
+
+    <form action="/predict" method="POST">
+        <div>
+            <p>Prediction Time</p>
+            <input type="datetime-local" name = "prediction _time" id="prediction_time">
+        </div>
+
+        <input type="submit" value="Predict">
+    </form>
+    <h2>Reconstruction Loss: {{loss}}</h2>
+    <h2>Reconstructed Values: {{pred}}</h2>
+
+</div>
+{% endblock %}
